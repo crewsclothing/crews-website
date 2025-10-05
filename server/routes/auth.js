@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET || "defaultsecret";
 
-// Signup
+// ✅ Signup Route
 router.post('/signup', async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -19,9 +19,8 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    // No hashing here — model pre-save does it
     const newUser = new User({ name, email, password });
-    await newUser.save();
+    await newUser.save(); // Password will be hashed by pre-save
 
     const token = jwt.sign({ id: newUser._id, email: newUser.email }, JWT_SECRET, { expiresIn: "7d" });
 
@@ -32,11 +31,20 @@ router.post('/signup', async (req, res) => {
     });
   } catch (err) {
     console.error("Signup error:", err);
+
+    if (err.code === 11000) {
+      return res.status(400).json({ message: "Email already registered" });
+    }
+
+    if (err.name === 'ValidationError') {
+      return res.status(400).json({ message: err.message });
+    }
+
     res.status(500).json({ message: "Internal server error" });
   }
 });
 
-// Login
+// ✅ Login Route
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
