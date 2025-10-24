@@ -1,0 +1,296 @@
+/* 🔼 Hero Banner */
+.home-container {
+  margin-top: 40px;
+}
+
+.hero-banner {
+  margin: 20px auto;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.banner-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 🛍️ Products Section */
+.products-section {
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  margin-top: -30px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  width: 220px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hd {
+  text-align: center;
+  margin: 30px 0 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* 📞 CTA Banner */
+.cta-banner-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.cta-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cta-whatsapp-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.cta-whatsapp-btn:hover {
+  background-color: #1ebe57;
+}
+
+/* 🔐 Login / Signup Section */
+.home-auth-buttons {
+  margin: 50px auto;
+  text-align: center;
+  padding: 30px 20px;
+  background: #f2f2f2;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.auth-link-btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #3f51b5;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.auth-link-btn:hover {
+  background-color: #2c387e;
+}
+
+/* 🏢 Franchise Banner */
+.franchise-banner {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  text-align: center;
+  padding: 60px 25px;
+  border-radius: 16px;
+  margin: 50px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.franchise-banner::before,
+.franchise-banner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.franchise-banner::before {
+  width: 200px;
+  height: 200px;
+  top: -60px;
+  left: -60px;
+}
+
+.franchise-banner::after {
+  width: 150px;
+  height: 150px;
+  bottom: -50px;
+  right: -50px;
+}
+
+.franchise-banner h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.franchise-banner p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.franchise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #25d366;
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.franchise-btn:hover {
+  background: #e0f7ec;
+  color: #128c7e;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌿 Cotton Quality Section */
+.cotton-quality {
+  background: linear-gradient(135deg, #f4fff4, #ffffff);
+  padding: 80px 40px;
+  border-radius: 20px;
+  margin: 60px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cotton-quality:hover {
+  transform: translateY(-5px);
+}
+
+.cotton-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cotton-img {
+  width: 420px;
+  height: 320px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cotton-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.cotton-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.cotton-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #1b5e20;
+  font-weight: bold;
+}
+
+.cotton-text p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* 🔹 Mobile View (≤480px) */
+@media (max-width: 480px) {
+  .banner-img { height: 180px; }
+  .product-list { flex-direction: column; gap: 0; }
+  .product-card { width: 100%; border-radius: 0; box-shadow: none; border-bottom: 1px solid #e0e0e0; }
+  .product-card img { height: 150px; border-radius: 0; }
+  .cta-banner { height: 200px; }
+  .cta-whatsapp-btn { padding: 10px 16px; font-size: 14px; bottom: 10px; right: 10px; }
+  .home-auth-buttons { width: 100%; padding: 20px; }
+  .button-group { flex-direction: column; gap: 12px; margin-top: 15px; }
+  .auth-link-btn { width: 90%; border-radius: 6px; font-size: 14px; padding: 8px 12px; }
+  .franchise-banner { padding: 30px 15px; margin: 30px 0; border-radius: 12px; }
+  .franchise-banner h2 { font-size: 20px; }
+  .franchise-banner p { font-size: 14px; margin-bottom: 15px; }
+  .franchise-btn { width: 100%; justify-content: center; font-size: 16px; padding: 12px 0; }
+  .cotton-content { flex-direction: column; text-align: center; gap: 30px; }
+  .cotton-img { width: 100%; max-width: 350px; height: auto; }
+  .cotton-text h2 { font-size: 26px; }
+  .cotton-text p { font-size: 16px; }
+}
+
+/* 🔹 Tablet View (481px–992px) */
+@media (min-width: 481px) and (max-width: 992px) {
+  .banner-img { height: 300px; }
+  .product-card { width: 45%; }
+  .cta-banner { height: 250px; }
+  .cta-whatsapp-btn { bottom: 15px; right: 15px; padding: 10px 20px; font-size: 15px; }
+  .button-group { flex-wrap: wrap; justify-content: center; gap: 20px; }
+  .franchise-banner { padding: 40px 20px; margin: 40px 0; border-radius: 14px; }
+  .franchise-banner h2 { font-size: 26px; }
+  .franchise-banner p { font-size: 16px; margin-bottom: 20px; }
+  .franchise-btn { font-size: 17px; padding: 12px 28px; }
+  .cotton-content { gap: 40px; }
+  .cotton-img { width: 100%; max-width: 380px; height: auto; }
+  .cotton-text h2 { font-size: 30px; }
+  .cotton-text p { font-size: 17px; }
+}
