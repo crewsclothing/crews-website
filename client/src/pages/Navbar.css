@@ -106,7 +106,7 @@
   border-radius: 50%;
 }
 
-/* 🔹 User Dropdown */
+/* User Dropdown */
 .user-dropdown {
   position: relative;
 }
@@ -140,6 +140,7 @@
 .dropdown-menu a:hover {
   color: #e63946;
 }
+
 .logo-link {
   display: flex;
   align-items: center;
@@ -147,156 +148,386 @@
 }
 
 .logo-img {
-  height: 40px;   /* adjust size */
+  height: 40px;
   width: auto;
-  margin-right: 10px; /* gap between logo and text */
+  margin-right: 10px;
 }
 
 .logo-text {
-  font-size: 1.rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #000; /* change based on theme */
+  color: #000;
 }
 
+/* Hamburger Menu Button - Hidden on Desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: all 0.3s ease;
+}
 
-/* 🔹 Tablet Responsive */
-@media (max-width: 992px) {
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+  background: #000;
+}
+
+/* Hamburger Animation - X Symbol */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================
+   TABLET VIEW (601px - 980px)
+   ============================================ */
+@media (min-width: 601px) and (max-width: 980px) {
   .navbar {
-    padding: 10px 20px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .logo-link {
+    margin-right: 15px;
+  }
+
+  .logo-img {
+    height: 36px;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
   }
 
   .nav-links {
     gap: 15px;
+    margin: 0 auto;
   }
 
   .nav-links li a {
-    font-size: 15px;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .nav-links li a:hover {
+    background: #f7f7f7;
+  }
+
+  .search-box {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    max-width: 200px;
   }
 
   .search-box input {
     font-size: 13px;
   }
+
+  .navbar-right {
+    gap: 12px;
+  }
+
+  .navbar-right > a {
+    display: none;
+  }
+
+  .icon {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .icon:hover {
+    transform: scale(1.15);
+  }
+
+  .icon-link {
+    margin-left: 8px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
 }
 
-/* 🔹 Mobile - Amazon Style */
-@media (max-width: 768px) {
+/* ============================================
+   MOBILE VIEW (0px - 600px)
+   ✨ Brand Color Hamburger Design
+   ============================================ */
+@media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
     padding: 0;
+    flex-wrap: wrap;
     border-bottom: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: relative;
   }
 
-  /* 🔸 Logo Top Row */
+  /* Logo - Left Side */
   .logo {
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    font-size: 22px;
-    background: #ffffff; /* Amazon dark */
-    color: #fff;
+    order: 1;
   }
 
-  /* 🔸 Search Box full-width row (smaller height) */
+  .logo-link {
+    padding: 14px 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 34px;
+    margin-right: 8px;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #222;
+  }
+
+  /* Icons - Middle */
+  .navbar-right {
+    order: 2;
+    gap: 8px;
+    padding: 14px 0;
+  }
+
+  .navbar-right > a {
+    display: none;
+  }
+
+  .icon-link {
+    margin-left: 0;
+    padding: 6px;
+  }
+
+  .icon {
+    font-size: 21px;
+    color: #444;
+  }
+
+  .badge {
+    top: -4px;
+    right: -6px;
+    font-size: 9px;
+    padding: 2px 5px;
+    min-width: 16px;
+    text-align: center;
+  }
+
+  /* ✨ Brand Color Hamburger - Beautiful Design */
+  .menu-toggle {
+    display: flex !important;
+    order: 3;
+    padding: 9px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background: #fff;
+    border: 2px solid #21808d;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle span {
+    background: #21808d !important;
+    height: 2.5px;
+    width: 20px;
+    border-radius: 2px;
+  }
+
+  .menu-toggle:hover {
+    background: #21808d;
+    transform: scale(1.05);
+  }
+
+  .menu-toggle:hover span {
+    background: #fff !important;
+  }
+
+  .menu-toggle:active {
+    transform: scale(0.98);
+  }
+
+  .menu-toggle.active {
+    background: #21808d;
+    border-color: #21808d;
+  }
+
+  .menu-toggle.active span {
+    background: #fff !important;
+  }
+
+  /* Search Box - Full Width */
   .search-box {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    border: none;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    background: #f3f3f3;
-    padding: 6px 10px; /* smaller padding */
+    order: 4;
+    width: calc(100% - 30px);
+    margin: 0 15px 12px 15px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: #f8f8f8;
+    border: 1px solid #e8e8e8;
   }
 
   .search-box input {
-    flex: 1;
-    font-size: 14px; /* smaller text */
-    padding: 4px; /* less height */
+    font-size: 14px;
+    width: 100%;
+    color: #333;
   }
 
-  /* 🔸 Nav links as menu buttons */
+  .search-box input::placeholder {
+    color: #999;
+  }
+
+  .search-icon {
+    font-size: 17px;
+    color: #777;
+  }
+
+  /* Navigation Menu - Dropdown from Right */
   .nav-links {
+    order: 5;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    width: 250px;
     flex-direction: column;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: #fafafa;
-    border-top: 1px solid #ddd;
+    gap: 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.35s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+    opacity: 1;
   }
 
   .nav-links li {
     width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
   }
 
   .nav-links li a {
     display: block;
-    padding: 12px 0;
-    font-size: 16px;
+    padding: 16px 20px;
+    font-size: 15px;
     font-weight: 500;
-    color: #111;
-    text-decoration: none;
-    transition: background 0.3s ease;
+    color: #333;
+    transition: all 0.2s ease;
   }
 
-  .nav-links li a:hover {
-    background: #f3f3f3;
-  }
-
-  /* 🔸 Show only Home, Products, About Us, Contact */
-  .nav-links li:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+  .nav-links li a::after {
     display: none;
   }
 
-  /* 🔸 Bottom mini-menu with Cart & Wishlist */
+  .nav-links li a:hover {
+    background: #f8f8f8;
+    color: #000;
+    padding-left: 25px;
+  }
+
+  .dropdown-menu {
+    top: 42px;
+    right: 0;
+    width: 200px;
+    border-radius: 10px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (0px - 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  .logo-link {
+    padding: 12px 12px;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .logo-text {
+    font-size: 0.98rem;
+  }
+
   .navbar-right {
-    width: 100%;
-    justify-content: space-around;
-    padding: 8px 0;
-    border-top: 1px solid #ddd;
-    background: #fff;
-    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 0;
   }
 
-  .navbar-right a {
-    font-size: 15px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: #f7f7f7;
-    margin: 5px;
-    font-weight: 500;
+  .icon {
+    font-size: 19px;
   }
 
-  .navbar-right a:hover {
-    background: #eaeaea;
+  .menu-toggle {
+    padding: 8px;
+    margin-right: 12px;
   }
 
-  /* cart & wishlist buttons look */
-  .navbar-right .cart-btn,
-  .navbar-right .wishlist-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: #ff9900; /* Amazon orange */
-    color: #fff;
-    font-weight: bold;
+  .menu-toggle span {
+    height: 2px;
+    width: 18px;
   }
 
-  .navbar-right .wishlist-btn {
-    background: #e63946; /* red for wishlist */
+  .search-box {
+    width: calc(100% - 24px);
+    margin: 0 12px 10px 12px;
+    padding: 9px 14px;
   }
 
-  /* Show icons in mobile again */
-  .icon-link {
-    display: inline-block; /* show again */
-    margin-left: 8px;
-    font-size: 20px; /* little bigger */
+  .search-box input {
+    font-size: 13px;
   }
 
-  .badge {
-    display: block; /* show badge */
+  .nav-links {
+    right: 12px;
+    width: calc(100% - 24px);
+    max-width: 280px;
+  }
+
+  .nav-links li a {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu {
+    width: 180px;
   }
 }

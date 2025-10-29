@@ -9,6 +9,7 @@ function Navbar({ searchQuery, setSearchQuery }) {
   const [wishCount, setWishCount] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
   const [userEmail, setUserEmail] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,6 +46,14 @@ function Navbar({ searchQuery, setSearchQuery }) {
     navigate("/login");
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       {/* 🔹 Logo */}
@@ -56,17 +65,17 @@ function Navbar({ searchQuery, setSearchQuery }) {
       </div>
 
       {/* 🔹 Navigation Links */}
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        <li><Link to="/about">About Us</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+      <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+        <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
+        <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
+        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
       </ul>
 
       {/* 🔹 Right Section */}
       <div className="navbar-right">
         <Link to="#">Help</Link>
-        <Link to="/orders">Orders</Link> {/* ✅ Fixed */}
+        <Link to="/orders">Orders</Link>
         {!userEmail && <Link to="/signup">Sign Up</Link>}
         {!userEmail && <Link to="/login">Log In</Link>}
 
@@ -119,6 +128,16 @@ function Navbar({ searchQuery, setSearchQuery }) {
           {cartCount > 0 && <span className="badge">{cartCount}</span>}
         </Link>
       </div>
+
+      {/* ✅ Hamburger Menu Button - LAST in HTML */}
+      <button 
+        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} 
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   );
 }
