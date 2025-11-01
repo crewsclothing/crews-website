@@ -1,144 +1,15 @@
+/* ============================================
+   BASE STYLE — PREMIUM CLOTHING BRAND
+   ============================================ */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  border-bottom: 3px solid #eee;
-  font-family: Arial, sans-serif;
+  padding: 18px 40px;
   background: #fff;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  position: relative;
-  text-decoration: none;
-  color: black;
-  font-size: 17px;
-  transition: color 0.3s ease;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: black;
-  transition: width 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #000;
-}
-
-.nav-links li a:hover::after {
-  width: 100%;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 13px;
-}
-
-.navbar-right a {
-  text-decoration: none;
-  color: black;
-  font-size: 12px;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  background: #eef0f2;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
-.search-box input {
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 14px;
-  padding-right: 5px;
-}
-
-.search-icon {
-  cursor: pointer;
-}
-
-.icon {
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.icon-link {
-  position: relative;
-  display: inline-block;
-  margin-left: 12px;
-}
-
-.badge {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background: #e63946;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 50%;
-}
-
-/* User Dropdown */
-.user-dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 35px;
-  right: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  width: 200px;
-  padding: 12px;
-  z-index: 1000;
-}
-
-.dropdown-menu p {
-  margin: 6px 0;
-  font-size: 14px;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 6px 0;
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.dropdown-menu a:hover {
-  color: #e63946;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: all 0.3s ease;
 }
 
 .logo-link {
@@ -154,48 +25,175 @@
 }
 
 .logo-text {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1.5px;
+  background: #111;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
   color: #000;
 }
 
-/* Hamburger Menu Button - Hidden on Desktop */
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon {
+  font-size: 20px;
+  color: #111;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  color: #000;
+}
+
+.icon-link {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #111;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f7f7f7;
+  padding: 6px 12px;
+  border-radius: 30px;
+  border: 1px solid #e5e5e5;
+  transition: all 0.3s ease;
+}
+
+.search-box:hover {
+  background: #f0f0f0;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #111;
+  width: 120px;
+}
+
+.search-icon {
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+}
+
+/* User Dropdown */
+.user-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 200px;
+  padding: 12px;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #111;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  color: #c19a6b; /* Warm luxury beige tone */
+}
+
+/* Hamburger Menu */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  cursor: pointer;
+  width: 26px;
+  height: 18px;
   background: transparent;
   border: none;
-  padding: 0;
-  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .menu-toggle span {
+  display: block;
+  height: 2px;
   width: 100%;
-  height: 3px;
-  background: #333;
+  background: #111;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-.menu-toggle:hover span {
-  background: #000;
-}
-
-/* Hamburger Animation - X Symbol */
 .menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ============================================
@@ -203,271 +201,93 @@
    ============================================ */
 @media (min-width: 601px) and (max-width: 980px) {
   .navbar {
-    padding: 14px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-bottom: 1px solid #e8e8e8;
-  }
-
-  .logo-link {
-    margin-right: 15px;
-  }
-
-  .logo-img {
-    height: 36px;
-  }
-
-  .logo-text {
-    font-size: 1.15rem;
+    padding: 14px 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
 
   .nav-links {
-    gap: 15px;
-    margin: 0 auto;
+    gap: 20px;
   }
 
   .nav-links li a {
     font-size: 14px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-weight: 500;
-  }
-
-  .nav-links li a:hover {
-    background: #f7f7f7;
+    letter-spacing: 0.6px;
   }
 
   .search-box {
-    padding: 8px 14px;
-    border-radius: 20px;
-    background: #f5f5f5;
-    max-width: 200px;
-  }
-
-  .search-box input {
-    font-size: 13px;
-  }
-
-  .navbar-right {
-    gap: 12px;
+    background: #fafafa;
+    border-radius: 25px;
+    padding: 7px 14px;
   }
 
   .navbar-right > a {
-    display: none;
-  }
-
-  .icon {
-    font-size: 20px;
-    transition: transform 0.2s ease;
-  }
-
-  .icon:hover {
-    transform: scale(1.15);
-  }
-
-  .icon-link {
-    margin-left: 8px;
-  }
-
-  .badge {
-    font-size: 10px;
-    padding: 2px 5px;
-  }
-
-  .menu-toggle {
     display: none;
   }
 }
 
 /* ============================================
    MOBILE VIEW (0px - 600px)
-   ✨ Brand Color Hamburger Design
    ============================================ */
 @media (max-width: 600px) {
   .navbar {
-    padding: 0;
-    flex-wrap: wrap;
-    border-bottom: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    position: relative;
-  }
-
-  /* Logo - Left Side */
-  .logo {
-    order: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: #fff; /* Changed to white */
   }
 
   .logo-link {
-    padding: 14px 15px;
-    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-
-  .logo-img {
-    height: 34px;
-    margin-right: 8px;
-  }
-
-  .logo-text {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #222;
-  }
-
-  /* Icons - Middle */
-  .navbar-right {
-    order: 2;
-    gap: 8px;
-    padding: 14px 0;
-  }
-
-  .navbar-right > a {
-    display: none;
-  }
-
-  .icon-link {
-    margin-left: 0;
-    padding: 6px;
-  }
-
-  .icon {
-    font-size: 21px;
-    color: #444;
-  }
-
-  .badge {
-    top: -4px;
-    right: -6px;
-    font-size: 9px;
-    padding: 2px 5px;
-    min-width: 16px;
     text-align: center;
   }
 
-  /* ✨ Brand Color Hamburger - Beautiful Design */
-  .menu-toggle {
-    display: flex !important;
-    order: 3;
-    padding: 9px;
-    margin-left: 5px;
-    margin-right: 15px;
-    background: #fff;
-    border: 2px solid #21808d;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+  .logo-img {
+    height: 70px;
+    width: auto;
+    margin: 0;
   }
 
-  .menu-toggle span {
-    background: #21808d !important;
-    height: 2.5px;
-    width: 20px;
-    border-radius: 2px;
+  .logo-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
-  .menu-toggle:hover {
-    background: #21808d;
-    transform: scale(1.05);
-  }
-
-  .menu-toggle:hover span {
-    background: #fff !important;
-  }
-
-  .menu-toggle:active {
-    transform: scale(0.98);
-  }
-
-  .menu-toggle.active {
-    background: #21808d;
-    border-color: #21808d;
-  }
-
-  .menu-toggle.active span {
-    background: #fff !important;
-  }
-
-  /* Search Box - Full Width */
-  .search-box {
-    order: 4;
-    width: calc(100% - 30px);
-    margin: 0 15px 12px 15px;
-    padding: 10px 16px;
-    border-radius: 25px;
-    background: #f8f8f8;
-    border: 1px solid #e8e8e8;
-  }
-
-  .search-box input {
-    font-size: 14px;
-    width: 100%;
-    color: #333;
-  }
-
-  .search-box input::placeholder {
-    color: #999;
-  }
-
-  .search-icon {
-    font-size: 17px;
-    color: #777;
-  }
-
-  /* Navigation Menu - Dropdown from Right */
+  /* 🌟 Horizontal menu instead of vertical */
   .nav-links {
-    order: 5;
-    position: absolute;
-    top: 60px;
-    right: 15px;
-    width: 250px;
-    flex-direction: column;
-    gap: 0;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    max-height: 0;
-    opacity: 0;
-    transition: all 0.35s ease;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    max-height: 400px;
-    opacity: 1;
-  }
-
-  .nav-links li {
-    width: 100%;
-    border-bottom: 1px solid #f2f2f2;
-  }
-
-  .nav-links li:last-child {
-    border-bottom: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 15px;
   }
 
   .nav-links li a {
-    display: block;
-    padding: 16px 20px;
-    font-size: 15px;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 1px;
     font-weight: 500;
-    color: #333;
-    transition: all 0.2s ease;
   }
 
   .nav-links li a::after {
-    display: none;
+    background: #000;
   }
 
-  .nav-links li a:hover {
-    background: #f8f8f8;
-    color: #000;
-    padding-left: 25px;
+  .navbar-right,
+  .search-box,
+  .menu-toggle {
+    display: none !important;
   }
 
-  .dropdown-menu {
-    top: 42px;
-    right: 0;
-    width: 200px;
-    border-radius: 10px;
+  body {
+    background-color: #fff;
   }
 }
 
@@ -475,59 +295,19 @@
    SMALL MOBILE (0px - 480px)
    ============================================ */
 @media (max-width: 480px) {
-  .logo-link {
-    padding: 12px 12px;
-  }
-
   .logo-img {
-    height: 30px;
+    height: 60px;
   }
 
   .logo-text {
-    font-size: 0.98rem;
-  }
-
-  .navbar-right {
-    gap: 6px;
-    padding: 12px 0;
-  }
-
-  .icon {
-    font-size: 19px;
-  }
-
-  .menu-toggle {
-    padding: 8px;
-    margin-right: 12px;
-  }
-
-  .menu-toggle span {
-    height: 2px;
-    width: 18px;
-  }
-
-  .search-box {
-    width: calc(100% - 24px);
-    margin: 0 12px 10px 12px;
-    padding: 9px 14px;
-  }
-
-  .search-box input {
-    font-size: 13px;
+    font-size: 1.4rem;
   }
 
   .nav-links {
-    right: 12px;
-    width: calc(100% - 24px);
-    max-width: 280px;
+    gap: 18px;
   }
 
   .nav-links li a {
-    padding: 14px 16px;
-    font-size: 14px;
-  }
-
-  .dropdown-menu {
-    width: 180px;
+    font-size: 13px;
   }
 }
