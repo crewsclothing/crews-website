@@ -65,7 +65,7 @@ function Products({ searchQuery }) {
 
   return (
     <div className="products-container">
-      <h1 className="section-title">🧥 Shirts</h1>
+      <h1 className="section-title"> Shirts</h1>
       <div className="product-grid">
         {shirts.map((item) => (
           <div key={item._id} className="product-card">
@@ -79,7 +79,7 @@ function Products({ searchQuery }) {
         ))}
       </div>
 
-      <h1 className="section-title">👖 Pants</h1>
+      <h1 className="section-title"> Pants</h1>
       <div className="product-grid">
         {pants.map((item) => (
           <div key={item._id} className="product-card">
@@ -93,7 +93,7 @@ function Products({ searchQuery }) {
         ))}
       </div>
 
-      <h1 className="section-title">🩲 Innerwear</h1>
+      <h1 className="section-title"> Innerwear</h1>
       <div className="product-grid">
         {innerwears.map((item) => (
           <div key={item._id} className="product-card">

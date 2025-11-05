@@ -59,7 +59,7 @@ function Home() {
 
       {/* 🛍️ Featured Products */}
       <section className="products-section">
-        <h2 className='hd'>🛍️ Featured Products</h2>
+        <h2 className='hd'> Featured Products</h2>
         <div className="product-list">
           <div className="product-card">
             <img src={tshirt} alt="T-Shirt" />
