@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import tshirt from '../tshirt.webp';
 import shirt from '../shirt.webp';
@@ -24,6 +24,24 @@ function Home() {
     slidesToShow: 1,
     slidesToScroll: 1
   };
+
+  // ✅ Scroll Animation Logic
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    const elements = document.querySelectorAll(
+      ".product-card, .cotton-quality, .home-auth-buttons, .franchise-banner"
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="home-container">
@@ -58,9 +76,13 @@ function Home() {
             <h3>Classic Jeans</h3>
             <p>₹799</p>
           </div>
+          <div className="product-card">
+            <img src={pant} alt="Jeans" />
+            <h3>Classic Jeans</h3>
+            <p>₹799</p>
+          </div>
         </div>
       </section>
-
 
       {/* 🌿 Pure Cotton Quality Section */}
       <section className="cotton-quality">
@@ -70,28 +92,13 @@ function Home() {
             <h2>🌿 100% Pure Cotton</h2>
             <p>
               Experience the comfort of <strong>premium cotton</strong>.
-              Our fabrics are <em>soft, breathable, and eco-friendly</em> –
+              Our fabrics are <em>soft, breathable, and eco-friendly</em> – 
               perfect for every season.
             </p>
             <p>✅ Skin Friendly | ✅ Long Lasting | ✅ Sustainable</p>
           </div>
         </div>
       </section>
-
-
-      {/* 🔽 New Hero Banner at Bottom
-      <div className="cta-banner-container">
-        <img src={logo} alt="Contact Us Banner" className="cta-banner" />
-
-        <a
-          href="https://wa.me/919990343478"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cta-whatsapp-btn"
-        >
-          💬 Chat with us on WhatsApp
-        </a>
-      </div> */}
 
       {/* 🔐 Login / Sign Up Buttons Section */}
       <section className="home-auth-buttons">
@@ -102,8 +109,7 @@ function Home() {
         </div>
       </section>
 
-
-      {/* 🏢 Franchise Enquiry Banner (WhatsApp Style) */}
+      {/* 🏢 Franchise Enquiry Banner */}
       <section className="franchise-banner">
         <h2>💼 Franchise Enquiry</h2>
         <p>Start your own clothing franchise with us and grow together!</p>
@@ -117,12 +123,8 @@ function Home() {
         </a>
       </section>
 
-
     </div>
-
-
   );
-
 }
-                                              
+
 export default Home;
